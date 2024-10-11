@@ -28,11 +28,16 @@
   <properties>
     <revision>0.0.1-SNAPSHOT</revision>
     <scm.repo.detail>org.eclipse.daanse.jakarta.xml.ws</scm.repo.detail>
-<!--    <bnd.version>7.1.0-SNAPSHOT</bnd.version>-->
+    <!--    <bnd.version>7.1.0-SNAPSHOT</bnd.version>-->
   </properties>
 
 
   <modules>
+    <module>api</module>
+    <module>demo</module>
+    <module>handler</module>
+    <module>runtime</module>
+    <module>itest</module>
   </modules>
 
 </project>

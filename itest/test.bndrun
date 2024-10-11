@@ -1,0 +1,117 @@
+#*******************************************************************************
+# Copyright (c)  2004 Contributors to the Eclipse Foundation
+#
+# This program and the accompanying materials are made
+# available under the terms of the Eclipse Public License 2.0
+# which is available at https://www.eclipse.org/legal/epl-2.0/ 
+# 
+# SPDX-License-Identifier: EPL-2.0
+#
+#   Contributors:
+#	SmartCity Jena - initial
+#	Stefan Bischof (bipolis.org) - initial
+#*******************************************************************************
+
+	
+-tester: biz.aQute.tester.junit-platform
+
+
+
+
+-runtrace: false
+-runvm: ${def;argLine}
+
+#-resolve.effective: active
+
+-runproperties: \
+	org.slf4j.simpleLogger.defaultLogLevel=debug,\
+	org.osgi.service.http.port=8090
+
+
+-runrequires: \
+	bnd.identity;id='${project.artifactId}-tests',\
+	bnd.identity;id=junit-jupiter-engine,\
+	bnd.identity;id=junit-platform-launcher,\
+	bnd.identity;id='com.sun.xml.ws.jaxws-rt',\
+	bnd.identity;id='org.glassfish.hk2.osgi-resource-locator',\
+	bnd.identity;id=junit-jupiter-engine,\
+	bnd.identity;id=junit-platform-launcher,\
+	bnd.identity;id='com.sun.xml.messaging.saaj.impl',\
+	bnd.identity;id='org.eclipse.daanse.jakarta.xml.ws.demo', \
+	bnd.identity;id='org.eclipse.daanse.jakarta.xml.ws.runtime.embedded', \
+	bnd.identity;id='org.eclipse.daanse.jakarta.xml.ws.runtime.httpwhiteboard'	
+
+
+-runee: JavaSE-21
+#-runfw: org.apache.felix.framework
+-runfw: org.eclipse.osgi
+
+# This will help us keep -runbundles sorted
+-runstartlevel: \
+	order=sortbynameversion,\
+	begin=-1
+# The following is calculated by the bnd-resolver-maven-plugin
+
+-runbundles: \
+	assertj-core;version='[3.26.0,3.26.1)',\
+	ch.qos.logback.classic;version='[1.5.6,1.5.7)',\
+	ch.qos.logback.core;version='[1.5.6,1.5.7)',\
+	com.fasterxml.woodstox.woodstox-core;version='[6.5.1,6.5.2)',\
+	com.sun.xml.bind.jaxb-core;version='[4.0.4,4.0.5)',\
+	com.sun.xml.bind.jaxb-impl;version='[4.0.4,4.0.5)',\
+	com.sun.xml.fastinfoset.FastInfoset;version='[2.1.0,2.1.1)',\
+	com.sun.xml.messaging.saaj.impl;version='[3.0.3,3.0.4)',\
+	com.sun.xml.stream.buffer.streambuffer;version='[2.1.0,2.1.1)',\
+	com.sun.xml.ws.jaxws-rt;version='[4.0.2,4.0.3)',\
+	jakarta.activation-api;version='[2.1.2,2.1.3)',\
+	jakarta.annotation-api;version='[2.1.1,2.1.2)',\
+	jakarta.xml.bind-api;version='[4.0.1,4.0.2)',\
+	jakarta.xml.soap-api;version='[3.0.1,3.0.2)',\
+	jakarta.xml.ws-api;version='[4.0.1,4.0.2)',\
+	junit-jupiter-api;version='[5.10.2,5.10.3)',\
+	junit-jupiter-engine;version='[5.10.2,5.10.3)',\
+	junit-jupiter-params;version='[5.10.2,5.10.3)',\
+	junit-platform-commons;version='[1.10.2,1.10.3)',\
+	junit-platform-engine;version='[1.10.2,1.10.3)',\
+	junit-platform-launcher;version='[1.10.2,1.10.3)',\
+	net.bytebuddy.byte-buddy;version='[1.14.16,1.14.17)',\
+	org.apache.aries.spifly.dynamic.framework.extension;version='[1.3.7,1.3.8)',\
+	org.apache.commons.commons-fileupload;version='[1.5.0,1.5.1)',\
+	org.apache.commons.commons-io;version='[2.11.0,2.11.1)',\
+	org.apache.felix.configadmin;version='[1.9.26,1.9.27)',\
+	org.apache.felix.http.jetty12.light;version='[1.0.2,1.0.3)',\
+	org.apache.felix.http.servlet-api;version='[3.0.0,3.0.1)',\
+	org.apache.felix.scr;version='[2.2.10,2.2.11)',\
+	org.eclipse.daanse.jakarta.xml.ws.demo;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.jakarta.xml.ws.itest;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.jakarta.xml.ws.itest-tests;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.jakarta.xml.ws.runtime.embedded;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.jakarta.xml.ws.runtime.httpwhiteboard;version='[0.0.1,0.0.2)',\
+	org.eclipse.daanse.jakarta.xml.ws.runtime.registrar;version='[0.0.1,0.0.2)',\
+	org.eclipse.jetty.alpn.server;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.ee10.servlet;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.http;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.http2.common;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.http2.hpack;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.http2.server;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.io;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.jmx;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.security;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.server;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.session;version='[12.0.5,12.0.6)',\
+	org.eclipse.jetty.util;version='[12.0.5,12.0.6)',\
+	org.glassfish.external.management-api;version='[3.2.3,3.2.4)',\
+	org.glassfish.gmbal.gmbal-api-only;version='[4.0.3,4.0.4)',\
+	org.glassfish.ha.ha-api;version='[3.1.13,3.1.14)',\
+	org.glassfish.hk2.osgi-resource-locator;version='[2.4.0,2.4.1)',\
+	org.jvnet.mimepull;version='[1.10.0,1.10.1)',\
+	org.jvnet.staxex.stax-ex;version='[2.1.0,2.1.1)',\
+	org.opentest4j;version='[1.3.0,1.3.1)',\
+	org.osgi.service.component;version='[1.5.1,1.5.2)',\
+	org.osgi.test.common;version='[1.3.0,1.3.1)',\
+	org.osgi.test.junit5;version='[1.3.0,1.3.1)',\
+	org.osgi.test.junit5.cm;version='[1.3.0,1.3.1)',\
+	org.osgi.util.function;version='[1.2.0,1.2.1)',\
+	org.osgi.util.promise;version='[1.3.0,1.3.1)',\
+	slf4j.api;version='[2.0.12,2.0.13)',\
+	stax2-api;version='[4.2.2,4.2.3)'

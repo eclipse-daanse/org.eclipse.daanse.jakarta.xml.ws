@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<!--
+/*********************************************************************
+* Copyright (c) 2023 Contributors to the Eclipse Foundation.
+*
+* This program and the accompanying materials are made
+* available under the terms of the Eclipse Public License 2.0
+* which is available at https://www.eclipse.org/legal/epl-2.0/
+*
+* SPDX-License-Identifier: EPL-2.0
+**********************************************************************/
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.eclipse.daanse</groupId>
+    <artifactId>org.eclipse.daanse.jakarta.xml.ws</artifactId>
+    <version>${revision}</version>
+  </parent>
+  <artifactId>org.eclipse.daanse.jakarta.xml.ws.itest</artifactId>
+  <dependencies>
+
+    <!--
+    Using the dependency scope allows to distinguish projects which contribute
+    execution data but should not become part of the report:
+    compile , runtime , provided : Project source and execution data is included in
+    the report.
+    test : Only execution data is considered for the report.
+    -->
+    <dependency>
+      <groupId>org.eclipse.daanse</groupId>
+      <artifactId>org.eclipse.daanse.jakarta.xml.ws.demo</artifactId>
+      <version>${revision}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.daanse</groupId>
+      <artifactId>org.eclipse.daanse.jakarta.xml.ws.runtime.registrar</artifactId>
+      <version>${revision}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.daanse</groupId>
+      <artifactId>org.eclipse.daanse.jakarta.xml.ws.runtime.embedded</artifactId>
+      <version>${revision}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.daanse</groupId>
+      <artifactId>org.eclipse.daanse.jakarta.xml.ws.runtime.httpwhiteboard</artifactId>
+      <version>${revision}</version>
+      <scope>runtime</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.service.component</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.osgi</groupId>
+      <artifactId>org.osgi.dto</artifactId>
+      <version>1.0.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.http.jetty12</artifactId>
+      <classifier>light</classifier>
+      <version>1.0.2</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.felix</groupId>
+      <artifactId>org.apache.felix.http.servlet-api</artifactId>
+      <version>3.0.0</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.glassfish.hk2</groupId>
+      <artifactId>osgi-resource-locator</artifactId>
+      <version>2.4.0</version>
+    </dependency>
+  </dependencies>
+</project>
