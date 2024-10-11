@@ -46,5 +46,6 @@ header:
     - 'license.templates'
     - '**/logback-test.xml'
     - '**/*.svg'
+    - '**/org/eclipse/daanse/jakarta/xml/ws/runtime/httpwhiteboard/wsri/*.java'
 
   comment: always
