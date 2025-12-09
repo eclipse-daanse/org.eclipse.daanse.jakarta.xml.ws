@@ -12,42 +12,34 @@
 *   Stefan Bischof (bipolis.org) - initial
 *   Christoph Läubrich - initial
 */
-package org.eclipse.daanse.jakarta.xml.ws.itests;
+package org.eclipse.daanse.jakarta.xml.ws.itests.integration;
 
-import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-import javax.xml.namespace.QName;
-
+import jakarta.xml.ws.handler.LogicalHandler;
+import jakarta.xml.ws.handler.LogicalMessageContext;
 import jakarta.xml.ws.handler.MessageContext;
-import jakarta.xml.ws.handler.soap.SOAPHandler;
-import jakarta.xml.ws.handler.soap.SOAPMessageContext;
 
-public class TestSoapHandler implements SOAPHandler<SOAPMessageContext> {
+public class TestLogicalHandler implements LogicalHandler<LogicalMessageContext> {
 
     AtomicInteger handledMessages = new AtomicInteger();
 
     @Override
-    public boolean handleMessage(SOAPMessageContext context) {
+    public boolean handleMessage(LogicalMessageContext context) {
         int msg = handledMessages.incrementAndGet();
-        System.out.println("TestSoapHandler.handleMessage no. " + msg);
+        System.out.println("TestLogicalHandler.handleMessage no. " + msg);
         return true;
     }
 
     @Override
-    public boolean handleFault(SOAPMessageContext context) {
-        System.out.println("TestSoapHandler.handleFault()");
+    public boolean handleFault(LogicalMessageContext context) {
+        System.out.println("TestLogicalHandler.handleFault()");
         return true;
     }
 
     @Override
     public void close(MessageContext context) {
-        System.out.println("TestSoapHandler.close()");
-    }
-
-    @Override
-    public Set<QName> getHeaders() {
-        return Set.of();
+        System.out.println("TestLogicalHandler.close()");
     }
 
 }
