@@ -42,7 +42,7 @@
 	bnd.identity;id='org.eclipse.daanse.jakarta.xml.ws.runtime.httpwhiteboard'	
 
 
--runee: JavaSE-21
+-runee: JavaSE-25
 #-runfw: org.apache.felix.framework
 -runfw: org.eclipse.osgi
 
@@ -68,20 +68,21 @@
 	jakarta.xml.bind-api;version='[4.0.1,4.0.2)',\
 	jakarta.xml.soap-api;version='[3.0.1,3.0.2)',\
 	jakarta.xml.ws-api;version='[4.0.1,4.0.2)',\
-	junit-jupiter-api;version='[5.10.2,5.10.3)',\
-	junit-jupiter-engine;version='[5.10.2,5.10.3)',\
-	junit-jupiter-params;version='[5.10.2,5.10.3)',\
-	junit-platform-commons;version='[1.10.2,1.10.3)',\
-	junit-platform-engine;version='[1.10.2,1.10.3)',\
-	junit-platform-launcher;version='[1.10.2,1.10.3)',\
-	net.bytebuddy.byte-buddy;version='[1.14.16,1.14.17)',\
-	org.apache.aries.spifly.dynamic.framework.extension;version='[1.3.7,1.3.8)',\
+	junit-jupiter-api;version='[5.12.2,5.12.3)',\
+	junit-jupiter-engine;version='[5.12.2,5.12.3)',\
+	junit-jupiter-params;version='[5.12.2,5.12.3)',\
+	junit-platform-commons;version='[1.12.2,1.12.3)',\
+	junit-platform-engine;version='[1.12.2,1.12.3)',\
+	junit-platform-launcher;version='[1.12.2,1.12.3)',\
+	net.bytebuddy.byte-buddy;version='[1.17.5,1.17.6)',\
+	org.apache.aries.spifly.dynamic.bundle;version='[1.3.7,1.3.8)',\
 	org.apache.commons.commons-fileupload;version='[1.5.0,1.5.1)',\
 	org.apache.commons.commons-io;version='[2.11.0,2.11.1)',\
 	org.apache.felix.configadmin;version='[1.9.26,1.9.27)',\
 	org.apache.felix.http.jetty12.light;version='[1.0.2,1.0.3)',\
 	org.apache.felix.http.servlet-api;version='[3.0.0,3.0.1)',\
 	org.apache.felix.scr;version='[2.2.10,2.2.11)',\
+	org.apache.tomcat-servlet-api;version='[9.0.80,9.0.81)',\
 	org.eclipse.daanse.jakarta.xml.ws.demo;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jakarta.xml.ws.itest;version='[0.0.1,0.0.2)',\
 	org.eclipse.daanse.jakarta.xml.ws.itest-tests;version='[0.0.1,0.0.2)',\
@@ -106,7 +107,13 @@
 	org.glassfish.hk2.osgi-resource-locator;version='[2.4.0,2.4.1)',\
 	org.jvnet.mimepull;version='[1.10.0,1.10.1)',\
 	org.jvnet.staxex.stax-ex;version='[2.1.0,2.1.1)',\
+	org.objectweb.asm;version='[9.9.0,9.9.1)',\
+	org.objectweb.asm.commons;version='[9.9.0,9.9.1)',\
+	org.objectweb.asm.tree;version='[9.9.0,9.9.1)',\
+	org.objectweb.asm.tree.analysis;version='[9.9.0,9.9.1)',\
+	org.objectweb.asm.util;version='[9.9.0,9.9.1)',\
 	org.opentest4j;version='[1.3.0,1.3.1)',\
+	org.osgi.service.cm;version='[1.6.1,1.6.2)',\
 	org.osgi.service.component;version='[1.5.1,1.5.2)',\
 	org.osgi.test.common;version='[1.3.0,1.3.1)',\
 	org.osgi.test.junit5;version='[1.3.0,1.3.1)',\

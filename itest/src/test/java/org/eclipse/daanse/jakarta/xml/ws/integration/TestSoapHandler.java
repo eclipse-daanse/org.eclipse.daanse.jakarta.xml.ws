@@ -12,7 +12,7 @@
 *   Stefan Bischof (bipolis.org) - initial
 *   Christoph Läubrich - initial
 */
-package org.eclipse.daanse.jakarta.xml.ws.itests;
+package org.eclipse.daanse.jakarta.xml.ws.integration;
 
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
